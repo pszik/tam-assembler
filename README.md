@@ -57,9 +57,9 @@ To illustrate, here is the ever popular Euclid's algorithm in TAM assembly:
 
 ```
   PUSH 2
-  LOADA(1) 0[SB]
+  LOADA 0[SB]
   CALL getint
-  LOADA(1) 1[SB]
+  LOADA 1[SB]
   CALL getint
 loop:
   LOAD(1) 1[SB]

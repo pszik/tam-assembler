@@ -29,7 +29,7 @@ public class Assembler {
 
         // read program
         InstructionList program = (InstructionList) new ProgramBuilder().visitProgram(
-            parser.program());
+                parser.program());
         return program.toByteArray();
     }
 }

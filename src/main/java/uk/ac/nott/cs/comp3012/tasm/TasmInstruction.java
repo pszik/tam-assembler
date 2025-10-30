@@ -14,16 +14,11 @@ public interface TasmInstruction {
     byte[] toByteArray();
 
 
-    record Instruction(TasmOpcode op, TasmRegister r, int n, int d) implements
-        TasmInstruction {
+    record Instruction(TasmOpcode op, TasmRegister r, int n, int d) implements TasmInstruction {
 
         public byte[] toByteArray() {
-            return new byte[]{
-                (byte) ((op.value << 4) | r.value),
-                (byte) n,
-                (byte) ((d & 0xff00) >>> 8),
-                (byte) (d & 0xff),
-            };
+            return new byte[]{(byte) ((op.value << 4) | r.value), (byte) n,
+                    (byte) ((d & 0xff00) >>> 8), (byte) (d & 0xff),};
         }
     }
 
@@ -33,8 +28,8 @@ public interface TasmInstruction {
             super();
         }
 
-        public InstructionList(Collection<Instruction> c) {
-            super(c);
+        public InstructionList(Collection<Instruction> elems) {
+            super(elems);
         }
 
         @Override

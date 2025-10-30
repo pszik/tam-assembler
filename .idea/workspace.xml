@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8608c01-fad4-49d5-a1fc-9d0027cdee22" name="Changes" comment="Update to 4 width tabs">
-      <change afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/Assembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/TasmInstruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/TasmInstruction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +70,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="bd91522d-5c65-4077-94b9-29053b5d8315" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pszik&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pszik/tam-assembler.git&quot;,
+    &quot;accountId&quot;: &quot;8f81209d-4f7f-43b9-80d2-a83b66868da6&quot;
+  }
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\pszik\.gradle\wrapper\dists\gradle-8.14.1-bin\baw1sv0jfoi8rxs14qo3h49cs\gradle-8.14.1" javaHome="C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot" gradleVersion="8.14.1" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -81,29 +94,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AssemberTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AssemberTests.testAssemble.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InstructionTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InstructionTests.testToBytes.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TasmInstructionTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TasmInstructionTests.testInstructionToBytes.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.Assembler.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.JdkConverter.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [jar].executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.tasm-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/iankn/IdeaProjects/tasm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AssemberTests.executor": "Run",
+    "Gradle.AssemberTests.testAssemble.executor": "Debug",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.InstructionTests.executor": "Run",
+    "Gradle.InstructionTests.testToBytes.executor": "Run",
+    "Gradle.TasmInstructionTests.executor": "Run",
+    "Gradle.TasmInstructionTests.testInstructionToBytes.executor": "Run",
+    "Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.Assembler.main()].executor": "Run",
+    "Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.JdkConverter.main()].executor": "Run",
+    "Gradle.tasm [build].executor": "Run",
+    "Gradle.tasm [jar].executor": "Run",
+    "JAR Application.tasm-1.0-SNAPSHOT.jar.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/iankn/IdeaProjects/tasm",
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.tasm [build]">
     <configuration name="AssemberTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>

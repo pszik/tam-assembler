@@ -124,9 +124,8 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
         int offset = labelOffsets.getOrDefault(ctx.LABEL().getText(), -1);
         if (offset < 0) {
             throw new ParseCancellationException(
-                String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
-                    ctx.getStart()
-                        .getLine()));
+                    String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
+                            ctx.getStart().getLine()));
         }
 
         return new Instruction(TasmOpcode.CALL, TasmRegister.CB, 0, offset);
@@ -169,9 +168,8 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
         int offset = labelOffsets.getOrDefault(ctx.LABEL().getText(), -1);
         if (offset < 0) {
             throw new ParseCancellationException(
-                String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
-                    ctx.getStart()
-                        .getLine()));
+                    String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
+                            ctx.getStart().getLine()));
         }
 
         return new Instruction(TasmOpcode.JUMP, TasmRegister.CB, 0, offset);
@@ -195,9 +193,8 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
         int offset = labelOffsets.getOrDefault(ctx.LABEL().getText(), -1);
         if (offset < 0) {
             throw new ParseCancellationException(
-                String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
-                    ctx.getStart()
-                        .getLine()));
+                    String.format("use of undeclared label '%s' on line %d", ctx.LABEL().getText(),
+                            ctx.getStart().getLine()));
         }
 
         int n = Integer.parseInt(ctx.n.getText());
