@@ -81,13 +81,13 @@ To illustrate, here is the ever popular Euclid's algorithm in TAM assembly:
 loop:
   LOAD(1) 1[SB]
   LOADL 0
-  CALL le
+  CALL gt
   JUMPIF(0) end  ; if b <= 0 goto end
   LOAD(1) 1[SB]
   LOAD(1) 0[SB]
   LOAD(1) 1[SB]
-  CALL sub
-  STORE(1) 1[SB] ; b = a-b
+  CALL mod
+  STORE(1) 1[SB] ; b = a%b
   STORE(1) 0[SB] ; a = b
   JUMP loop
 end:
@@ -96,3 +96,4 @@ end:
   CALL puteol
   HALT
 ```
+
