@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "uk.ac.nott.cs.comp2013"
-version = "1.1.2"
+version = "1.2.0"
 
 repositories {
     mavenCentral()
