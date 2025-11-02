@@ -218,7 +218,7 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
             return Integer.parseInt(numberText);
         }
 
-        String substr = numberText.substring(0, numberText.length()-2);
+        String substr = numberText.substring(0, numberText.length() - 1);
         return Integer.parseInt(substr, 16);
     }
 

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8608c01-fad4-49d5-a1fc-9d0027cdee22" name="Changes" comment="Allow character literals for LOADL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/antlr/uk/ac/nott/cs/comp3012/tasm/Tasm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/uk/ac/nott/cs/comp3012/tasm/Tasm.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" afterDir="false" />
+    <list default="true" id="f8608c01-fad4-49d5-a1fc-9d0027cdee22" name="Changes" comment="Add tests and fix bugs">
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/ac/nott/cs/comp3012/tasm/AssemblerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/ac/nott/cs/comp3012/tasm/AssemblerTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +100,8 @@
   "keyToString": {
     "Gradle.AssemberTests.executor": "Run",
     "Gradle.AssemberTests.testAssemble.executor": "Debug",
+    "Gradle.AssemblerTests.executor": "Run",
+    "Gradle.AssemblerTests.testAssembleHexNumber.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.InstructionTests.executor": "Run",
     "Gradle.InstructionTests.testToBytes.executor": "Run",
@@ -123,7 +123,7 @@
     "settings.editor.selected.configurable": "preferences.sourceCode.JAVA"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.tasm [build]">
+  <component name="RunManager" selected="Gradle.AssemblerTests">
     <configuration name="AssemberTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -138,6 +138,54 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;uk.ac.nott.cs.comp3012.tasm.AssemberTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AssemblerTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;uk.ac.nott.cs.comp3012.tasm.AssemblerTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AssemblerTests.testAssembleHexNumber" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;uk.ac.nott.cs.comp3012.tasm.AssemblerTests.testAssembleHexNumber&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,39 +240,13 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="tasm [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="tasm-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/tasm-1.0-SNAPSHOT.jar" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AssemblerTests" />
+        <item itemvalue="Gradle.AssemblerTests.testAssembleHexNumber" />
         <item itemvalue="Gradle.tasm [build]" />
         <item itemvalue="Gradle.tam-assembler [generateGrammarSource]" />
         <item itemvalue="Gradle.AssemberTests" />
-        <item itemvalue="Gradle.tasm [jar]" />
-        <item itemvalue="JAR Application.tasm-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -444,7 +466,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762116240627</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Add hexadecimal numbers">
+      <option name="closed" value="true" />
+      <created>1762116794166</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1762116794166</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add tests and fix bugs">
+      <option name="closed" value="true" />
+      <created>1762117536541</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1762117536541</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,6 +518,8 @@
     <MESSAGE value="Update to 4 width tabs" />
     <MESSAGE value="Various small tweaks" />
     <MESSAGE value="Allow character literals for LOADL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Allow character literals for LOADL" />
+    <MESSAGE value="Add hexadecimal numbers" />
+    <MESSAGE value="Add tests and fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests and fix bugs" />
   </component>
 </project>
