@@ -88,8 +88,9 @@ PRIMITIVE
 CHAR: '\'' '\u0020'..'\u007e' '\'';
 
 fragment DIGIT: [0-9];
+fragment HEXDIGIT: [0-9A-F];
 
-NUMBER: DIGIT+;
+NUMBER: DIGIT+ | HEXDIGIT+ 'h';
 NEGNUMBER: '-' NUMBER;
 
 fragment LBLHEAD: [a-zA-Z];

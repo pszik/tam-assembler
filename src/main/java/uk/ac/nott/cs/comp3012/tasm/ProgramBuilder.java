@@ -68,27 +68,27 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
     @Override
     public TasmInstruction visitLoadInstr(LoadInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
-        int n = Integer.parseInt(ctx.n.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int n = parseNumber(ctx.n.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.LOAD, r, n, d);
     }
 
     @Override
     public TasmInstruction visitLoadaInstr(LoadaInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.LOADA, r, 0, d);
     }
 
     @Override
     public TasmInstruction visitLoadiInstr(LoadiInstrContext ctx) {
-        int n = Integer.parseInt(ctx.n.getText());
+        int n = parseNumber(ctx.n.getText());
         return new Instruction(TasmOpcode.LOADI, TasmRegister.CB, n, 0);
     }
 
     @Override
     public TasmInstruction visitLoadlInstr(LoadlInstrContext ctx) {
-        int d = Integer.parseInt(ctx.d.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.LOADL, TasmRegister.CB, 0, d);
     }
 
@@ -101,14 +101,14 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
     @Override
     public TasmInstruction visitStoreInstr(StoreInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
-        int n = Integer.parseInt(ctx.n.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int n = parseNumber(ctx.n.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.STORE, r, n, d);
     }
 
     @Override
     public TasmInstruction visitStoreiInstr(StoreiInstrContext ctx) {
-        int n = Integer.parseInt(ctx.n.getText());
+        int n = parseNumber(ctx.n.getText());
         return new Instruction(TasmOpcode.STOREI, TasmRegister.CB, n, 0);
     }
 
@@ -116,7 +116,7 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
     public TasmInstruction visitCallInstr(CallInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
         int n = TasmRegister.valueOf(ctx.n.getText()).value;
-        int d = Integer.parseInt(ctx.d.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.CALL, r, n, d);
     }
 
@@ -145,28 +145,28 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
 
     @Override
     public TasmInstruction visitReturnInstr(ReturnInstrContext ctx) {
-        int n = Integer.parseInt(ctx.n.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int n = parseNumber(ctx.n.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.RETURN, TasmRegister.CB, n, d);
     }
 
     @Override
     public TasmInstruction visitPushInstr(PushInstrContext ctx) {
-        int d = Integer.parseInt(ctx.d.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.PUSH, TasmRegister.CB, 0, d);
     }
 
     @Override
     public TasmInstruction visitPopInstr(PopInstrContext ctx) {
-        int n = Integer.parseInt(ctx.n.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int n = parseNumber(ctx.n.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.POP, TasmRegister.CB, n, d);
     }
 
     @Override
     public TasmInstruction visitJumpInstr(JumpInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.JUMP, r, 0, d);
     }
 
@@ -190,8 +190,8 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
     @Override
     public TasmInstruction visitJumpifInstr(JumpifInstrContext ctx) {
         TasmRegister r = TasmRegister.valueOf(ctx.r.getText());
-        int n = Integer.parseInt(ctx.n.getText());
-        int d = Integer.parseInt(ctx.d.getText());
+        int n = parseNumber(ctx.n.getText());
+        int d = parseNumber(ctx.d.getText());
         return new Instruction(TasmOpcode.JUMPIF, r, n, d);
     }
 
@@ -204,13 +204,22 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
                             ctx.getStart().getLine()));
         }
 
-        int n = Integer.parseInt(ctx.n.getText());
+        int n = parseNumber(ctx.n.getText());
         return new Instruction(TasmOpcode.JUMPIF, TasmRegister.CB, n, offset);
     }
 
     @Override
     public TasmInstruction visitHaltInstr(HaltInstrContext ctx) {
         return new Instruction(TasmOpcode.HALT, TasmRegister.CB, 0, 0);
+    }
+
+    private int parseNumber(String numberText) {
+        if (!numberText.endsWith("h")) {
+            return Integer.parseInt(numberText);
+        }
+
+        String substr = numberText.substring(0, numberText.length()-2);
+        return Integer.parseInt(substr, 16);
     }
 
     private int getPrimitiveOffset(String primitive) {

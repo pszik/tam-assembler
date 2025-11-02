@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8608c01-fad4-49d5-a1fc-9d0027cdee22" name="Changes" comment="Various small tweaks">
+    <list default="true" id="f8608c01-fad4-49d5-a1fc-9d0027cdee22" name="Changes" comment="Allow character literals for LOADL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/antlr/uk/ac/nott/cs/comp3012/tasm/Tasm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/antlr/uk/ac/nott/cs/comp3012/tasm/Tasm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/ac/nott/cs/comp3012/tasm/ProgramBuilder.java" afterDir="false" />
@@ -42,6 +42,12 @@
                 <item name="tasm" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tasm" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -92,30 +98,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AssemberTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AssemberTests.testAssemble.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InstructionTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InstructionTests.testToBytes.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TasmInstructionTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TasmInstructionTests.testInstructionToBytes.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.Assembler.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.JdkConverter.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.tasm [jar].executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.tasm-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/iankn/IdeaProjects/tasm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JAVA&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AssemberTests.executor": "Run",
+    "Gradle.AssemberTests.testAssemble.executor": "Debug",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.InstructionTests.executor": "Run",
+    "Gradle.InstructionTests.testToBytes.executor": "Run",
+    "Gradle.TasmInstructionTests.executor": "Run",
+    "Gradle.TasmInstructionTests.testInstructionToBytes.executor": "Run",
+    "Gradle.tam-assembler [generateGrammarSource].executor": "Run",
+    "Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.Assembler.main()].executor": "Run",
+    "Gradle.tasm [:uk.ac.nott.cs.comp3012.tasm.JdkConverter.main()].executor": "Run",
+    "Gradle.tasm [build].executor": "Run",
+    "Gradle.tasm [jar].executor": "Run",
+    "JAR Application.tasm-1.0-SNAPSHOT.jar.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/iankn/IdeaProjects/tasm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JAVA"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.tasm [build]">
     <configuration name="AssemberTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -139,6 +146,28 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="tam-assembler [generateGrammarSource]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateGrammarSource" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="tasm [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -192,6 +221,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.tasm [build]" />
+        <item itemvalue="Gradle.tam-assembler [generateGrammarSource]" />
         <item itemvalue="Gradle.AssemberTests" />
         <item itemvalue="Gradle.tasm [jar]" />
         <item itemvalue="JAR Application.tasm-1.0-SNAPSHOT.jar" />
@@ -406,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761830166650</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Allow character literals for LOADL">
+      <option name="closed" value="true" />
+      <created>1762116240627</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1762116240627</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,6 +479,7 @@
     <MESSAGE value="Add labels for control flow" />
     <MESSAGE value="Update to 4 width tabs" />
     <MESSAGE value="Various small tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Various small tweaks" />
+    <MESSAGE value="Allow character literals for LOADL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allow character literals for LOADL" />
   </component>
 </project>
