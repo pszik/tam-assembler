@@ -12,6 +12,7 @@ instruction
   | 'LOADA' d=offset '[' r=REGISTER ']'                         # loadaInstr
   | 'LOADI' '(' n=NUMBER ')'                                    # loadiInstr
   | 'LOADL' d=offset                                            # loadlInstr
+  | 'LOADL' c=CHAR                                              # loadlChar
   | 'STORE' '(' n=NUMBER ')' d=offset '[' r=REGISTER ']'        # storeInstr
   | 'STOREI' '(' n=NUMBER ')'                                   # storeiInstr
   | 'CALL' '(' n=REGISTER ')' d=offset '[' r=REGISTER ']'       # callInstr
@@ -83,6 +84,8 @@ PRIMITIVE
   | 'new'
   | 'dispose'
   ;
+
+CHAR: '\'' '\u0020'..'\u007e' '\'';
 
 fragment DIGIT: [0-9];
 

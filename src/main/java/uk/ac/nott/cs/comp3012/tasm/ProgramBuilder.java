@@ -20,6 +20,7 @@ import uk.ac.nott.cs.comp3012.tasm.TasmParser.LabelledProgElementContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.LoadInstrContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.LoadaInstrContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.LoadiInstrContext;
+import uk.ac.nott.cs.comp3012.tasm.TasmParser.LoadlCharContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.LoadlInstrContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.PopInstrContext;
 import uk.ac.nott.cs.comp3012.tasm.TasmParser.ProgElementContext;
@@ -88,6 +89,12 @@ public class ProgramBuilder extends TasmBaseVisitor<TasmInstruction> {
     @Override
     public TasmInstruction visitLoadlInstr(LoadlInstrContext ctx) {
         int d = Integer.parseInt(ctx.d.getText());
+        return new Instruction(TasmOpcode.LOADL, TasmRegister.CB, 0, d);
+    }
+
+    @Override
+    public TasmInstruction visitLoadlChar(LoadlCharContext ctx) {
+        int d = ctx.c.getText().charAt(1);
         return new Instruction(TasmOpcode.LOADL, TasmRegister.CB, 0, d);
     }
 
